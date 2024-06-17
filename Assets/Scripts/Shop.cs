@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    private int Upgrade1;
-    private int Upgrade2;
-    private int Upgrade3;
-    private int Upgrade4;
+    private int upgrade1;
+    private int upgrade2;
+    private int upgrade3;
+    private int upgrade4;
 
-    private int Upgrade1Value;
-    private int Upgrade2Value;
-    private int Upgrade3Value;
-    private int Upgrade4Value;
+    private int upgrade1Value;
+    private int upgrade2Value;
+    private int upgrade3Value;
+    private int upgrade4Value;
 
     [SerializeField] private GameObject AutoCliker1;
     [SerializeField] private GameObject AutoCliker2;
@@ -23,53 +23,157 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        if(Upgrade1 == 0)
+        if(upgrade1 == 0)
         {
-            Upgrade1 = 0;
+            upgrade1 = 0;
         }
-        if(Upgrade2 == 0)
+        if(upgrade2 == 0)
         {
-            Upgrade2 = 0;
+            upgrade2 = 0;
         }
-        if(Upgrade3 == 0)
+        if(upgrade3 == 0)
         {
-            Upgrade3 = 0;
+            upgrade3 = 0;
         }
-        if(Upgrade4 == 0)
+        if(upgrade4 == 0)
         {
-            Upgrade4 = 0;
+            upgrade4 = 0;
+        }
+        UpdateIncomText1();
+        UpdateIncomText2();
+        UpdateIncomText3();
+        UpdateIncomText4();
+    }
+    private void UpdateIncomText1()
+    {
+        if (upgrade1 < 60)
+        {
+            upgrade1Value = (upgrade1 + 1) * (upgrade1 + 1) * 10;
+            UpgradeText1.text = $"수입 강화\n({upgrade1} / 60)\n{upgrade1Value} G";
+        }
+        else if (upgrade1 == 60)
+        {
+            UpgradeText1.text = $"수입 강화\n({upgrade1} / 60)\nMax!!!";
+        }
+    }
+    private void UpdateIncomText2()
+    {
+        if (upgrade2 < 60)
+        {
+            upgrade2Value = (upgrade2 + 1) * (upgrade2 + 3) * 55;
+            UpgradeText2.text = $"자동 수입 강화\n({upgrade2} / 60)\n{upgrade2Value} G";
+        }
+        else if(upgrade2 == 60)
+        {
+            UpgradeText2.text = $"자동 수입 강화\n({upgrade2} / 60)\nMax!!!";
+        }
+    }
+    private void UpdateIncomText3()
+    {
+        if (upgrade3 < 20)
+        {
+            upgrade3Value = (upgrade3 + 1) * (upgrade3 + 2) * 25;
+            UpgradeText3.text = $"자동 수입 1\n추가\n({upgrade3} / 20)\n{upgrade3Value} G";
+        }
+        else if (upgrade3 == 20)
+        {
+            UpgradeText3.text = $"자동 수입 1\n추가\n({upgrade3} / 20)\nMax!!!";
+        }
+    }
+    private void UpdateIncomText4()
+    {
+        if (upgrade4 < 20)
+        {
+            upgrade4Value = (upgrade4 + 1) * (upgrade4 + 3) * 25;
+            UpgradeText4.text = $"자동 수입 2\n추가\n({upgrade4} / 20)\n{upgrade4Value} G";
+        }
+        else if (upgrade4 == 20)
+        {
+            UpgradeText4.text = $"자동 수입 2\n추가\n({upgrade4} / 20)\nMax!!!";
         }
     }
     public void OnUpgradeIncom()
     {
-        if (Upgrade1 < 60)
+        if (upgrade1 < 60)
+        {
+            if (PlayerManager.Instance.gold >= upgrade1Value)
+            {
+                PlayerManager.Instance.UesGold(upgrade1Value);
+                upgrade1 += 1;
+                PlayerManager.Instance.AddIncom(upgrade1 * 2);
+                UpdateIncomText1();
+            }
+            else
+            {
+
+            }
+        }
+        else
         {
 
         }
     }
     public void OnUpgradeAIncom()
     {
-        if (Upgrade2 < 60)
+        if (upgrade2 < 60)
+        {
+            if (PlayerManager.Instance.gold >= upgrade2Value)
+            {
+                PlayerManager.Instance.UesGold(upgrade2Value);
+                upgrade2 += 1;
+                PlayerManager.Instance.AddAutoIncom(upgrade2 * 3);
+                UpdateIncomText2();
+            }
+            else
+            {
+
+            }
+        }
+        else
         {
 
         }
     }
     public void OnUpgradeAddAuto()
     {
-        if (Upgrade3 < 30)
+        if (upgrade3 < 20)
         {
-            Instantiate(AutoCliker1);
-            Upgrade3 += 1;
-            UpgradeText3.text = $"자동 수입 1\n추가\n({Upgrade3} / 30)";
+            if (PlayerManager.Instance.gold >= upgrade3Value)
+            {
+                PlayerManager.Instance.UesGold(upgrade3Value);
+                upgrade3 += 1;
+                Instantiate(AutoCliker1);
+                UpdateIncomText3();
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
         }
     }
     public void OnUpgradeAddAuto2()
     {
-        if (Upgrade4 < 30)
+        if (upgrade4 < 20)
         {
-            Instantiate(AutoCliker2);
-            Upgrade4 += 1;
-            UpgradeText4.text = $"자동 수입 2\n추가\n({Upgrade4} / 30)";
+            if (PlayerManager.Instance.gold >= upgrade4Value)
+            {
+                PlayerManager.Instance.UesGold(upgrade4Value);
+                upgrade4 += 1;
+                Instantiate(AutoCliker2);
+                UpdateIncomText4();
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
         }
     }
 }

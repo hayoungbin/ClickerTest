@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI incomText;
     [SerializeField] private TextMeshProUGUI autoIncomText;
 
-    private float gold;
+    public float gold { get; private set; }
     private float incom;
     private float autoIncom;
 
@@ -80,11 +80,6 @@ public class PlayerManager : MonoBehaviour
         UpdateAutoIncom();
     }
 
-    public void ClickToIncom()
-    {
-        gold += incom;
-        UpdateGold();
-    }
     public void UpdateGold()
     {
         goldText.text = gold.ToString();
@@ -98,6 +93,13 @@ public class PlayerManager : MonoBehaviour
         autoIncomText.text = autoIncom.ToString();
     }
 
+    public void ClickToIncom()
+    {
+        gold += incom;
+        UpdateGold();
+    }
+
+
     public void AddIncom(float value)
     {
         incom += value;
@@ -109,6 +111,12 @@ public class PlayerManager : MonoBehaviour
         UpdateAutoIncom();
     }
 
+    public void UesGold(float value)
+    {
+        gold -= value;
+        UpdateGold();
+    }
+
     public IEnumerator AutoIncom()
     {
         while (true)
@@ -118,7 +126,7 @@ public class PlayerManager : MonoBehaviour
                 gold += autoIncom;
                 UpdateGold();
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3);
         }
     }
     public IEnumerator AutoIncom2()
@@ -130,7 +138,7 @@ public class PlayerManager : MonoBehaviour
                 gold += autoIncom * 2f;
                 UpdateGold();
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3);
         }
     }
 }

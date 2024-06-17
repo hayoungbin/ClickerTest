@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -14,6 +15,11 @@ public class Shop : MonoBehaviour
 
     [SerializeField] private GameObject AutoCliker1;
     [SerializeField] private GameObject AutoCliker2;
+
+    [SerializeField] private TextMeshProUGUI UpgradeText1;
+    [SerializeField] private TextMeshProUGUI UpgradeText2;
+    [SerializeField] private TextMeshProUGUI UpgradeText3;
+    [SerializeField] private TextMeshProUGUI UpgradeText4;
 
     private void Start()
     {
@@ -52,14 +58,18 @@ public class Shop : MonoBehaviour
     {
         if (Upgrade3 < 30)
         {
-
+            Instantiate(AutoCliker1);
+            Upgrade3 += 1;
+            UpgradeText3.text = $"자동 수입 1\n추가\n({Upgrade3} / 30)";
         }
     }
     public void OnUpgradeAddAuto2()
     {
         if (Upgrade4 < 30)
         {
-
+            Instantiate(AutoCliker2);
+            Upgrade4 += 1;
+            UpgradeText4.text = $"자동 수입 2\n추가\n({Upgrade4} / 30)";
         }
     }
 }

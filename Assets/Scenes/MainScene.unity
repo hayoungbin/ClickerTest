@@ -375,6 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 77898599}
   - component: {fileID: 77898600}
+  - component: {fileID: 77898601}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -429,6 +430,24 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &77898601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77898598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895b516b1caa18d479906a81607c7f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoCliker1: {fileID: 3380222247777240436, guid: a0a8c45b6f9447c4eb7199700bb1ff2c, type: 3}
+  AutoCliker2: {fileID: 7749522892096540771, guid: cb255bcb4ef946745ae3f36f3a9ce357, type: 3}
+  UpgradeText1: {fileID: 1534895153}
+  UpgradeText2: {fileID: 251734879}
+  UpgradeText3: {fileID: 890092792}
+  UpgradeText4: {fileID: 634607113}
 --- !u!1 &147184411
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +683,7 @@ GameObject:
   - component: {fileID: 251734880}
   - component: {fileID: 251734879}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Upgrade2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,7 +1393,7 @@ GameObject:
   - component: {fileID: 634607114}
   - component: {fileID: 634607113}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Upgrade4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,7 +1438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC790\uB3D9 \uC218\uC785 \uCD94\uAC00\n(0/30)"
+  m_text: "\uC790\uB3D9 \uC218\uC785 2\n\uCD94\uAC00\n(0/30)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47bce0b83f29eee4cadaef65a9535935, type: 2}
   m_sharedMaterial: {fileID: 1790485297336977399, guid: 47bce0b83f29eee4cadaef65a9535935, type: 2}
@@ -1787,7 +1806,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 811409474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77898601}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: OnUpgradeAddAuto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &811409474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,7 +2110,7 @@ GameObject:
   - component: {fileID: 890092793}
   - component: {fileID: 890092792}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Upgrade3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2124,7 +2155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC790\uB3D9 \uC218\uC785 \uCD94\uAC00\n(0/30)"
+  m_text: "\uC790\uB3D9 \uC218\uC785 1\n\uCD94\uAC00\n(0/30)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47bce0b83f29eee4cadaef65a9535935, type: 2}
   m_sharedMaterial: {fileID: 1790485297336977399, guid: 47bce0b83f29eee4cadaef65a9535935, type: 2}
@@ -3234,7 +3265,7 @@ GameObject:
   - component: {fileID: 1534895154}
   - component: {fileID: 1534895153}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Upgrade1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3600,7 +3631,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2132704189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77898601}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: OnUpgradeAddAuto2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2132704189
 MonoBehaviour:
   m_ObjectHideFlags: 0

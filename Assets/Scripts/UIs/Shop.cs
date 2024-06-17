@@ -105,12 +105,12 @@ public class Shop : MonoBehaviour
             }
             else
             {
-
+                StartCoroutine(GameManager.Instance.OnSystemMassage("자금이 부족합니다!!!"));
             }
         }
         else
         {
-
+            StartCoroutine(GameManager.Instance.OnSystemMassage("이미 업그레이드가 완료되었습니다!"));
         }
     }
     public void OnUpgradeAIncom()
@@ -126,12 +126,12 @@ public class Shop : MonoBehaviour
             }
             else
             {
-
+                StartCoroutine(GameManager.Instance.OnSystemMassage("자금이 부족합니다!!!"));
             }
         }
         else
         {
-
+            StartCoroutine(GameManager.Instance.OnSystemMassage("이미 업그레이드가 완료되었습니다!"));
         }
     }
     public void OnUpgradeAddAuto()
@@ -147,12 +147,12 @@ public class Shop : MonoBehaviour
             }
             else
             {
-
+                StartCoroutine(GameManager.Instance.OnSystemMassage("자금이 부족합니다!!!"));
             }
         }
         else
         {
-
+            StartCoroutine(GameManager.Instance.OnSystemMassage("이미 업그레이드가 완료되었습니다!"));
         }
     }
     public void OnUpgradeAddAuto2()
@@ -168,12 +168,12 @@ public class Shop : MonoBehaviour
             }
             else
             {
-
+                StartCoroutine(GameManager.Instance.OnSystemMassage("자금이 부족합니다!!!"));
             }
         }
         else
         {
-
+            StartCoroutine(GameManager.Instance.OnSystemMassage("이미 업그레이드가 완료되었습니다!"));
         }
     }
 }

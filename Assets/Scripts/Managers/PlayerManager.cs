@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI autoIncomText;
 
     public float gold { get; private set; }
-    private float incom;
+    private float incom = 1;
     private float autoIncom;
 
     public event Action OnAutoIncom;

@@ -5,29 +5,15 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    #region ========== ΩÃ±€≈Ê ==========
-    private static PlayerManager _instance;
-
-    public static PlayerManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = new GameObject("PlayerManager").AddComponent<PlayerManager>();
-            }
-            return _instance;
-        }
-    }
+    public static PlayerManager Instance = null;
 
     private void Awake()
     {
-        if (_instance == null)
+        if (Instance == null)
         {
-            _instance = this;
+            Instance = this;
         }
     }
-    #endregion
 
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private TextMeshProUGUI incomText;

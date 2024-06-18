@@ -37,8 +37,6 @@ public class PlayerManager : MonoBehaviour
     private float incom = 1;
     private float autoIncom;
 
-    public event Action OnAutoIncom;
-
     private void Start()
     {
         StartCoroutine(AutoIncom());

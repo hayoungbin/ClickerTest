@@ -25,14 +25,6 @@ public class PlayerManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            if (_instance != this)
-            {
-                Destroy(gameObject);
-            }
         }
     }
     #endregion
@@ -49,32 +41,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if (gold == 0f)
-        {
-            gold = 0f;
-        }
-        else
-        {
-            gold = 0f;
-        }
-
-        if (incom == 0f)
-        {
-            incom = 1f;
-        }
-        else
-        {
-            incom = 1f;
-        }
-
-        if(autoIncom == 0f)
-        {
-            autoIncom = 0f;
-        }
-        else
-        {
-            autoIncom = 0f;
-        }
         StartCoroutine(AutoIncom());
         UpdateIncom();
         UpdateAutoIncom();

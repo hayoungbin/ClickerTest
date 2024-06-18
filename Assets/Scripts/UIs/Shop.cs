@@ -23,22 +23,6 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        if(upgrade1 == 0)
-        {
-            upgrade1 = 0;
-        }
-        if(upgrade2 == 0)
-        {
-            upgrade2 = 0;
-        }
-        if(upgrade3 == 0)
-        {
-            upgrade3 = 0;
-        }
-        if(upgrade4 == 0)
-        {
-            upgrade4 = 0;
-        }
         UpdateIncomText1();
         UpdateIncomText2();
         UpdateIncomText3();
